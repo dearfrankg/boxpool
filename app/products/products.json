@@ -1,52 +1,71 @@
-
 [
-
   {
-    "id": "bp1",
-    "name": "Sani-Hands for Kid's Wipes - 80 Ct.",
-    "desc": "Sani-Hands for Kid's wipes are perfect for the on-the-go family. The ideal choice when soap and water aren't available, these pre-moistened, hand-sanitizing wipes are super gentle on delicate skin and kill 99.9% of germs; throw them in your car, backpack or diaper bag for easy use, no matter where you are.",
-    "price": 3.99,
-    "image": "products/bp1.jpg"
-  },
-  
-
-
-  {
-    "id": "bp2",
+    "id": "0001",
+    "category": "children",
     "name": "Sani-Hands Kids Travel Pack",
-    "desc": "The Sani-Hands Travel Pack for Kids includes 15 moist, anti-bacterial wipes in a portable, resealable package. In addition to killing 99.99% of germs, these wipes contain soothing aloe to keep hands moisturized. ",
-    "price": 0.99,
-    "image": "products/bp2.jpg"
+    "desc": "The Sani-Hands Travel Pack for Kids includes 15 moist, anti-bacterial wipes in a portable package. In addition to killing 99.99% of germs, these wipes contain soothing aloe to keep hands moisturized.---带孩子出门必备湿纸巾，一包15张，杀死99.9%的细菌 ",
+    "price": 12.00,
+    "image": "products/0001.jpg"
   },
 
   {
-    "id": "bp3",
-    "name": "Seventh Generation Dish Liquid, Free Clear-25oz",
-    "desc": "25 oz. bottle made from 90% post-consumer recycled plastic. Everyone can pitch in on the dishes thanks to Seventh Gereration's safe, non-toxic formula.",
-    "price": 3.69,
-    "image": "products/bp3.png"
-  },
-  
-
-
-  {
-    "id": "bp4",
+    "id": "0002",
+    "category": "cleansing",
     "name": "Veggie Wash Fruit & Vegetable Wash-16 oz.",
-    "desc": "Veggie Wash 16 oz. - made with 100% natural ingredients from citrus fruit, corn, and coconuts.",
-    "price": 4.35,
-    "image": "products/bp4.png"
+    "desc": "Veggie Wash 16 oz. - made with 100% natural ingredients from citrus fruit, corn, and coconuts.--强烈推荐家庭必备，蔬菜水果清洗剂，480ml, 100%成分从柑橘类植物，玉米和椰子中提取，美国生产，将清洗剂喷在蔬菜瓜果上揉20-30秒，用水冲洗后可以直接吃",
+    "price": 85.00,
+    "image": "products/0002.png"
   },
-  
 
   {
-    "id": "bp5",
+    "id": "0003",
+    "category": "children",
     "name": "Similac Go & Grow Milk Powder",
-    "desc": "Similac Go & Grow provides balanced nutrition for your older baby's growth and development. It is designed to complement table food and help support her natural immune system for good health.",
-    "price": 24.89,
-    "image": "products/bp5.png"
+    "desc": "Similac Go & Grow provides balanced nutrition for your older baby's growth and development. It is designed to complement table food and help support her natural immune system for good health. 22oz. --雅培奶粉二段，1-3岁，这个不用介绍大家都知道",
+    "price": 240.00,
+    "image": "products/0003.png"
+  },
+  {
+    "id": "0004",
+    "category": "health",
+    "name": "Health Plus Colon Cleanse",
+    "desc": "草莓味的清理肠道粗纤维，早晚一勺冲水喝有利于及时排除体内垃圾，有每天不规律排泄的朋友可以试试这个",
+    "price": 120.00,
+    "image": "products/0004.png"
+  },
+  {
+    "id": "0005",
+    "category": "diet",
+    "name": "Green Coffee Bean Extract",
+    "desc": "绿咖啡豆是近期流行的减肥药，这款是液体的有利于吸收，随饭每次半管，吃了很多减肥产品都没有效果的朋友，强烈推荐这个试试",
+    "price": 170.00,
+    "image": "products/0005.png"
+  },
+  {
+    "id": "0006",
+    "category": "beauty",
+    "name": "Vivite Night Renewal Facial Cream",
+    "desc": "这款产品里有从甘蔗里提取的乙醇酸，它能有效的进入皮肤层去除死细胞同时去除皮肤色素沉淀，使皮肤看上去年起，真的很有效，但不建议35岁之前的朋友用，个人觉得没必要那么早就用这么成分奢侈的产品，每天一次晚上使用",
+    "price": 610.00,
+    "image": "products/0006.png"
+  },
+  {
+    "id": "0007",
+    "category": "beauty", 
+    "name": "Colorescience Pro Sunforgettable Sunscreen Brush SPF30",
+    "desc": "这个防晒的刷子很容易将防晒粉扑到脸上也容易携带，是我06年去美国无意进美容院被介绍使用的，想想当时的印象是：这个产品的成分比商店里的任何防晒产品更有效，扑上粉就能晒无需等待15-20分钟。只是这个不那么方便往身上刷",
+    "price": 390.00,
+    "image": "products/0007.png"
+  },
+  {
+    "id": "0008",
+    "category": "beauty", 
+    "name": "Neocutis Bio-Cream Bio-restorative Skin Cream--50ml",
+    "desc": "如果你和我一样，脸超级干燥，一天只能容忍用奶系列的洗面奶洗一次脸，每逢过度干燥就演变成皮肤有硬痂感，同时很容易过敏，试试这个吧，这个现在是我的救星，就是有些小贵",
+    "price": 1030.00,
+    "image": "products/0008.png"
   }
 
-]
-  
 
+]
 

@@ -4,30 +4,45 @@
 
 <div class="hero-unit">
   <h1>Products</h1>
-  <p>We're waiting for Kristal to finish the design.</p>
+  <h3>For your convenience</h3>
 </div>
 
 
 
+<div class="categories">
+
+  <div class="btn-group">
+      <button 
+        ng-repeat="category in categories"
+        tooltip="{{category.comment}}"
+        type="button" 
+        class="btn btn-primary " 
+        ng-model="radio.category" 
+        btn-radio="category.id">{{category.name}}</button>
+  </div>
+
+</div>
+
+
 <div class="container-fluid">
   <div class="row-fluid">
-    <div class="span1">
-      <!--Sidebar content-->
 
-  
-    </div>
-    <div class="span10">
-      <!--Body content-->
+      <div class="span1">
+        <!--Sidebar content-->
+      </div>
+      <div class="span10">
+        <!--Body content-->
 
-      <ul class="phones">
-        <li ng-repeat="phone in phones" class="thumbnail">
-          <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.image}}"></a>
-          <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
-          <p>{{phone.desc}}</p>
-          <p>Product ID: {{phone.id}} - Price: {{phone.price}}</p>
-        </li>
-      </ul>
+        <ul class="products">
+          <li class="thumbnail" ng-repeat="product in products | filter:radio.category " >
+            <img class="thumb" ng-src="{{product.image}}">
+            <span class="product-title">{{product.name}}</span>
+            <p>{{product.desc}}</p>
+            <p>Product ID: <strong>{{product.id}}</strong> - Price: <strong>¥{{product.price}}</strong></p>
+          </li>
+        </ul>
 
-    </div>
+      </div>
+
   </div>
 </div>

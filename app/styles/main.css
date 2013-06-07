@@ -6,26 +6,57 @@ body {
   padding-top: 20px;
 }
 
-.phones {
+
+
+/* HOME */
+
+.home-container {
+  text-align: center;
+  margin-bottom: 200px;
+}
+
+.verbiage {
+  margin: 0 auto;
+  width: 80%;
+  text-align: left;
+}
+
+p.red {
+  color: red;
+}
+
+
+
+
+/* PRODUCTS */
+
+.categories {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.products {
   list-style: none;
+}
+
+
+.products li {
+  clear: both;
+  height: 140px;
+  padding-top: 15px;
+}
+
+.product-title {
+  color: blue;
 }
 
 .thumb {
   float: left;
   margin: 1em 1em 1.5em 0em;
   padding-bottom: 1em;
+  padding-right: 15px;
   height: 100px;
   width: 100px;
 /*  margin-top: 10px;
 */}
-
-.phones li {
-  clear: both;
-  height: 140px;
-  padding-top: 15px;
-}
-
-
-.verbiage {
-  width: 80%;
-}

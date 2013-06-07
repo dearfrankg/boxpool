@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('boxpoolApp', ['productServices'])
+angular.module('boxpoolApp', ['productService','ui.bootstrap'])
   .config ['$routeProvider', ($routeProvider) ->
     $routeProvider
       .when '/',

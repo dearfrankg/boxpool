@@ -254,7 +254,8 @@ module.exports = function (grunt) {
             'components/**/*',
             'images/{,*/}*.{gif,webp}',
             'styles/fonts/*',
-            'CNAME'
+            'CNAME',
+            'products/*'
           ]
         }]
       }
