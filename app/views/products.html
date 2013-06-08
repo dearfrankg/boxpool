@@ -3,7 +3,7 @@
 <div ng-include="'views/nav.html'"></div>
 
 <div class="hero-unit">
-  <h1>Products</h1>
+  <h1>Products - 产品</h1>
 </div>
 
 
@@ -33,7 +33,7 @@
         <!--Body content-->
 
         <ul class="products">
-          <li class="thumbnail" ng-repeat="product in products | filter:radio.category " >
+          <li class="thumbnail" ng-repeat="product in products | filter:{category:radio.category} " >
             <img class="thumb" ng-src="{{product.image}}">
             <span class="product-title">{{product.name}}</span>
             <p>{{product.desc}}</p>
