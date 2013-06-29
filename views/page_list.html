@@ -1,27 +1,31 @@
 <div ng-include="" src="'views/nav.html'"></div>
 
-<div class="alert alert-success">
-  <strong>Page List</strong> 
+<div ng-show="admin">
+
+  <div class="alert alert-success">
+    <strong>Page List</strong> 
+  </div>
+
+  <input type="text" ng-model="search" class="search-query" placeholder="Search">
+  <br>
+  <br>
+  <a class="btn btn-info" href="#/pages/new"><i class="icon-plus-sign"></i> New Page</a>
+  <br>
+  <br>
+
+  <table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+      <th class="span1">&nbsp;</th>
+      <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="page in pages | filter:search | orderBy:'name'">
+      <td><a href="#/pages/{{page._id.$oid}}"><i class="icon-pencil"></i></a></td>    
+      <td><a href="#/pages/{{page._id.$oid}}">{{page.name}}</a></td>
+    </tr>
+    </tbody>
+  </table>
+  
 </div>
-
-<input type="text" ng-model="search" class="search-query" placeholder="Search">
-<br>
-<br>
-<a class="btn btn-info" href="#/pages/new"><i class="icon-plus-sign"></i> New Page</a>
-<br>
-<br>
-
-<table class="table table-bordered table-striped">
-  <thead>
-  <tr>
-    <th class="span1">&nbsp;</th>
-    <th>Name</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr ng-repeat="page in pages | filter:search | orderBy:'name'">
-    <td><a href="#/pages/{{page._id.$oid}}"><i class="icon-pencil"></i></a></td>    
-    <td><a href="#/pages/{{page._id.$oid}}">{{page.name}}</a></td>
-  </tr>
-  </tbody>
-</table>

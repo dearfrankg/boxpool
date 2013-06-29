@@ -1,25 +1,29 @@
 <div ng-include="" src="'views/nav.html'"></div>
-<br>
-<div class="alert alert-success">
-  <strong>Page Edit</strong> 
-</div>
 
-
-
-<form name="myForm">
-
-  <div class="control-group" ng-class="{error: myForm.name.$invalid}">
-    <label>Name</label>
-    <input type="text" name="name" ng-model="page.name" required="">
-    <span ng-show="myForm.name.$error.required" class="help-inline">Required</span>
+<div ng-show="admin">
+  <br>
+  <div class="alert alert-success">
+    <strong>Page Edit</strong> 
   </div>
 
 
-  <label>Text</label>
-  <textarea class="span11" name="text" ng-model="page.text"></textarea>
 
-  <br>
-  <a href="#/pages" class="btn"><i class="icon-list"></i> Page List</a>
-  <button ng-click="save()" ng-disabled="isClean() || myForm.$invalid" class="btn btn-primary">Save</button>
-  <button ng-click="destroy()" ng-show="page._id" class="btn btn-danger">Delete</button>
-</form>
+  <form name="myForm">
+
+    <div class="control-group" ng-class="{error: myForm.name.$invalid}">
+      <label>Name</label>
+      <input type="text" name="name" ng-model="page.name" required="">
+      <span ng-show="myForm.name.$error.required" class="help-inline">Required</span>
+    </div>
+
+
+    <label>Text</label>
+    <textarea class="span11" name="text" ng-model="page.text"></textarea>
+
+    <br>
+    <a href="#/pages" class="btn"><i class="icon-list"></i> Page List</a>
+    <button ng-click="save()" ng-disabled="isClean() || myForm.$invalid" class="btn btn-primary">Save</button>
+    <button ng-click="destroy()" ng-show="page._id" class="btn btn-danger">Delete</button>
+  </form>
+
+</div>
