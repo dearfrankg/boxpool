@@ -1,0 +1,34 @@
+<div ng-include="" src="'views/nav.html'"></div>
+
+
+<input type="text" ng-model="search" class="search-query" placeholder="Search">
+
+<br>
+<br>
+
+<div class="categories">
+  <div class="btn-group">
+      <button ng-repeat="category in categories" tooltip-html-unsafe="{{category.tooltip}}" type="button" class="btn btn-primary" ng-model="radio.category" btn-radio="category.code">{{category.name}}</button>
+  </div>
+</div>
+
+<br>
+
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th class="span2">Image</th>
+    <th>Product Details</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="product in products | filter:{category:radio.category} | filter:search | orderBy:'name'">
+    <td class="span1"><img class="product-image-thumb" ng-src="{{product.imageUrl}}"></td>
+    <td>      
+      <div class="product-title">{{product.name}}</div>
+      <div>{{product.description}}</div>
+      <div>Product ID: <strong>{{product.id}}</strong> - Price: <strong>¥{{product.price}}</strong></div>
+    </td>
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,32 @@
+<div ng-include="" src="'views/nav.html'"></div>
+
+<div class="alert alert-success">
+  <strong>Category List</strong> 
+</div>
+
+<input type="text" ng-model="search" class="search-query" placeholder="Search">
+<br>
+<br>
+<a class="btn btn-info" href="#/categories/new"><i class="icon-plus-sign"></i> New Category</a>
+<br>
+<br>
+
+<table class="table table-bordered table-striped">
+  <thead>
+  <tr>
+    <th>&nbsp;</th>
+    <th>Code</th>
+    <th>Name</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="category in categories | filter:search | orderBy:'name'">
+    <td>
+      <a href="#/categories/{{category._id.$oid}}"><i class="icon-pencil"></i></a>
+    </td>    
+    <td><a href="#/categories/{{category._id.$oid}}">{{category.code}}</a></td>
+    <td>{{category.name}}</td>
+
+  </tr>
+  </tbody>
+</table>
