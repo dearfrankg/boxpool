@@ -1,0 +1,33 @@
+<div ng-include src="'views/nav.html'"></div>
+
+<div class="alert alert-success">
+  <strong>Product List</strong> 
+</div>
+
+<input type="text" ng-model="search" class="search-query" placeholder="Search">
+<br>
+<br>
+<a class="btn btn-info" href="#/products/new"><i class="icon-plus-sign"></i> New Product</a>
+<br>
+<br>
+
+<table class="table table-bordered table-striped">
+  <thead>
+  <tr>
+    <th>&nbsp;</th>
+    <th class="span2">Image</th>
+    <th>ID</th>
+    <th>Product</th>
+    <th>Category</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="product in products | filter:search | orderBy:'name'">
+    <td><a href="#/products/{{product._id.$oid}}"><i class="icon-pencil"></i></a></td>   
+    <td class="span1"><a href="#/products/{{product._id.$oid}}" ><img class="product-image-small" ng-src="{{product.imageUrl}}"></a></td>
+    <td>{{product.id}}</td>
+    <td><a href="#/products/{{product._id.$oid}}" >{{product.name}}</a></td>
+    <td>{{product.category}}</td>
+  </tr>
+  </tbody>
+</table>
