@@ -9,11 +9,19 @@ files = [
   JASMINE_ADAPTER,
   'app/bower_components/angular/angular.js',
   'app/bower_components/angular-resource/angular-resource.js',
+  'app/bower_components/angular-cookies/angular-cookies.js',
+  'app/bower_components/angular-sanitize/angular-sanitize.js',
   'app/bower_components/angular-mocks/angular-mocks.js',
+
+  'app/bower_components/underscore/underscore.js',
+  'app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+
   '.tmp/scripts/*.js',
   '.tmp/scripts/**/*.js',
   '.tmp/spec/**/*.js'
 ];
+
+
 
 // list of files to exclude
 exclude = [];

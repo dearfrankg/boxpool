@@ -1,16 +1,17 @@
+
+
 body {
-    background: #fafafa;
+    background: #fff;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;
 }
 
 .hero-unit {
     margin: 50px auto 0 auto;
-    width: 300px;
     font-size: 18px;
     font-weight: 200;
     line-height: 30px;
-    background-color: #eee;
+    background-color: #e8e8e8;
     border-radius: 6px;
     padding: 60px;
 }
@@ -20,3 +21,76 @@ body {
     line-height: 1;
     letter-spacing: -1px;
 }
+
+
+/*
+    FORM 
+*/
+
+input, textarea {
+    width: 450px;
+}
+textarea {
+    height: 200px;
+}
+
+.product-image-small {
+    width: 50px;
+    height: 50px;
+    border-radius: 3px;
+}
+
+/* HOME */
+
+.home-container {
+  text-align: center;
+  margin-bottom: 200px;
+}
+
+.verbiage {
+  margin: 0 auto;
+  width: 80%;
+  text-align: left;
+}
+
+p.red {
+  color: red;
+}
+
+
+/* LOGIN */
+
+.login-container {
+  margin: 0 auto;
+  padding: 30px;
+  width: 300px;
+  margin-bottom: 200px;
+  background: #fff;
+  border-radius: 12px;
+
+}
+
+
+/* PRODUCTS */
+
+.product-title {
+  color: blue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,9 +1,13 @@
+<div ng-include src="'views/nav.html'"></div>
+
 <div class="hero-unit">
-  <h1>'Allo, 'Allo!</h1>
-  <p>You now have</p>
-  <ul>
-      <li ng-repeat="thing in awesomeThings">{{thing}}</li>
-  </ul>
-  <p>installed.</p>
-  <h3>Enjoy coding! - Yeoman</h3>
+  <h1>欢迎你来分箱(享)快乐</h1>
 </div>
+
+<br>
+<br>
+
+<div class="home-container">
+  <div class="verbiage" ng-bind-html-unsafe="page.text"></div>
+</div>
+
