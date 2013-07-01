@@ -16,7 +16,7 @@
           value="{{option.code}}" 
           ng-selected=" product.category == option.code " >{{option.name}}</option>
       </select>
-      <span ng-show="myForm.category.$error.required" class="help-inline">Required</span>
+      <span ng-show="myForm.product.category.$error.required" class="help-inline">Required</span>
     </div>
 
 
@@ -49,7 +49,7 @@
     <textarea name="description" ng-model="product.description"></textarea>
 
     <br>
-    <a href="#/products" class="btn"><i class="icon-list"></i> Product List</a>
+    <a href="#/edit-products" class="btn"><i class="icon-list"></i> Product List</a>
     <button 
       ng-click="save()" 
       ng-disabled="isClean() || myForm.$invalid"

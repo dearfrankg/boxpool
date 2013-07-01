@@ -5,23 +5,28 @@
 app = angular.module('boxpoolApp')
   
 app.controller 'ProductListCtrl', [
-  '$scope', 'Product', 'categoryList',
-  ($scope, Product, categoryList) ->
+  '$scope', 'Product', 'Category', 
+  ($scope, Product, Category) ->
 
-    $scope.categories = categoryList
-    $scope.products = Product.query()
-    $scope.radio = { category: 'beauty'}
+    $scope.radio = {}
+
+    Category.query (categories) ->
+      $scope.categories = categories      
+      $scope.radio.category = $scope.categories[0].code || ''
+
+    Product.query (products) ->
+      $scope.products = products
 
 ]
 
 
 app.controller 'ProductEditCtrl', [
-  '$scope', 'categoryList', 'Product', '$routeParams', '$location', '$filter'
-  ($scope, categoryList, Product, $routeParams, $location, $filter) ->
+  '$scope', 'Category', 'Product', '$routeParams', '$location', '$filter'
+  ($scope, Category, Product, $routeParams, $location, $filter) ->
 
     self
 
-    $scope.options = categoryList
+    $scope.options = Category.query()
 
     Product.get({ id: $routeParams.productID }, (product) ->
       self.original = product
@@ -48,12 +53,44 @@ app.controller 'ProductEditCtrl', [
 
 
 app.controller 'ProductCreateCtrl', [
-  '$scope', 'Product', '$location'
-  ($scope, Product, $location) ->
+  '$scope', 'Product', '$location', 'Category', 
+  ($scope, Product, $location, Category) ->
+
+    $scope.product = {}
+
+    Category.query (categories) ->
+      $scope.options = categories
+      $scope.product.category ||= $scope.options[0].code
 
     $scope.save = ->
       Product.save $scope.product, (product) ->
         $location.path('/products/' + product._id.$oid)
 
 ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

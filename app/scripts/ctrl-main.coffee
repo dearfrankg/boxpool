@@ -5,11 +5,14 @@ angular.module('boxpoolApp')
     '$scope', '$location', 'Page', '$cookies', 'PASSWORD',
     ($scope, $location, Page, $cookies, PASSWORD) ->
 
+      $scope.page = {}
+      $scope.admin = $cookies.admin
+
       $scope.active = (path) ->
         active = path == $location.path()
         return active;
 
-      $scope.login = ->
+      $scope.login = () ->
         $scope.admin = $scope.page.username is 'kristal' and $scope.page.password is PASSWORD
         if $scope.admin 
           $cookies.admin = 'admin'
@@ -24,7 +27,6 @@ angular.module('boxpoolApp')
         $scope.admin = !!$cookies.admin
         $location.path('#/')
 
-      $scope.admin = $cookies.admin
 
   ])
   .controller('MainCtrl', [
