@@ -13,7 +13,7 @@
       <select ng-model="product.category">
         <option ng-repeat="option in options" value="{{option.code}}" ng-selected=" product.category == option.code ">{{option.name}}</option>
       </select>
-      <span ng-show="myForm.category.$error.required" class="help-inline">Required</span>
+      <span ng-show="myForm.product.category.$error.required" class="help-inline">Required</span>
     </div>
 
 
