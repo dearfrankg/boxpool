@@ -1,23 +1,15 @@
 'use strict'
 
 angular.module('boxpoolApp')
-  .controller 'MainCtrl', [
+  .controller('AppCtrl', [
     '$scope', '$location', 'Page', '$cookies', 'PASSWORD',
     ($scope, $location, Page, $cookies, PASSWORD) ->
-
-
-      Page.query(
-        {name: 'home'}
-        (page) ->
-          $scope.page = page[0]
-      )
 
       $scope.active = (path) ->
         active = path == $location.path()
         return active;
 
-
-      $scope.login = (path) ->
+      $scope.login = ->
         $scope.admin = $scope.page.username is 'kristal' and $scope.page.password is PASSWORD
         if $scope.admin 
           $cookies.admin = 'admin'
@@ -27,15 +19,27 @@ angular.module('boxpoolApp')
           $cookies.admin = ''
           $scope.flash = 'Invalid Login'
 
-
-
-      $scope.logout = (path) ->
+      $scope.logout = ->
         $cookies.admin = ''
         $scope.admin = !!$cookies.admin
         $location.path('#/')
 
-
       $scope.admin = $cookies.admin
-      console.log 555
 
-  ]
+  ])
+  .controller('MainCtrl', [
+    '$scope', '$location', 'Page', '$cookies', 'PASSWORD',
+    ($scope, $location, Page, $cookies, PASSWORD) ->
+
+
+      $scope.updateHome = ->
+        Page.query(
+          {name: 'home'}
+          (page) ->
+            $scope.page = page[0]
+        )
+
+      $scope.updateHome()
+
+
+  ])

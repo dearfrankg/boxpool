@@ -14,7 +14,7 @@ angular.module('boxpoolApp', [
 
         .when '/',
           templateUrl: 'views/main.html'
-
+          controller: 'MainCtrl'
 
         # login
 
