@@ -1,0 +1,42 @@
+<div ng-include src="'views/nav.html'"></div>
+
+<div class="hero-unit">
+  <h1>Login</h1>
+</div>
+
+<br>
+<br>
+
+<div class="login-container">
+
+
+  <div ng-show="flash" class="alert alert-error-messages">
+    <strong>{{flash}}</strong> 
+  </div>
+
+  <form name="myForm">
+
+    <div class="control-group" ng-class="{error: myForm.username.$invalid}">
+      <label>Username</label>
+      <input class="span3" type="text" name="username" ng-model="page.username" required>
+      <span ng-show="myForm.username.$error.required" class="help-inline">Required</span>
+    </div>
+
+    <div class="control-group" ng-class="{error: myForm.password.$invalid}">
+      <label>Password</label>
+      <input class="span3" type="password" name="password" ng-model="page.password" required>
+      <span ng-show="myForm.password.$error.required" class="help-inline">Required</span>
+    </div>
+
+
+    <br>
+    <a href="#/" class="btn">Cancel</a>
+    <button 
+      ng-click="login()" 
+      ng-disabled="isClean() || myForm.$invalid"
+      class="btn btn-primary">Login</button>
+
+  </form>
+
+</div>
+
