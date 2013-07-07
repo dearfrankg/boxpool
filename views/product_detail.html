@@ -1,19 +1,16 @@
 <div ng-include="" src="'views/nav.html'"></div>
 
 <div ng-show="admin">
-  <br>
-  <div class="alert alert-success">
-    <strong>Product Edit</strong> 
-  </div>
+
 
   <form name="myForm">
 
-    <div class="control-group" ng-class="{error: myForm.name.$invalid}">
+    <div class="control-group" ng-class="{error: myForm.category.$invalid}">
       <label>Category</label>
-      <select ng-model="product.category">
+      <select name="category" ng-model="product.category">
         <option ng-repeat="option in options" value="{{option.code}}" ng-selected=" product.category == option.code ">{{option.name}}</option>
       </select>
-      <span ng-show="myForm.product.category.$error.required" class="help-inline">Required</span>
+      <span ng-show="myForm.category.$error.required" class="help-inline">Required</span>
     </div>
 
 
@@ -40,6 +37,7 @@
       <input type="url" name="imageUrl" ng-model="product.imageUrl" required="">
       <span ng-show="myForm.imageUrl.$error.required" class="help-inline">Required</span>
       <span ng-show="myForm.imageUrl.$error.url" class="help-inline">Not a URL</span>
+      <div><img class="img-rounded img-normal" ng-src="{{product.imageUrl}}"></div>
     </div>
 
     <label>Description</label>

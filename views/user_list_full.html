@@ -1,0 +1,25 @@
+<div ng-include="" src="'views/nav.html'"></div>
+
+<input type="text" ng-model="search" class="search-query" placeholder="Search">
+
+<br>
+<br>
+
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th class="span2">Image</th>
+    <th>Tracking Details</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="tracking in trackingList | filter:search | orderBy:'date'">
+    <td class="span1"><img class="tracking-image-thumb" ng-src="{{tracking.imageUrl}}"></td>
+    <td>      
+      <div class="tracking-title">{{tracking.name}}</div>
+      <div>{{tracking.description}}</div>
+      <div>Tracking ID: <strong>{{tracking.id}}</strong> - Price: <strong>¥{{tracking.price}}</strong></div>
+    </td>
+  </tr>
+  </tbody>
+</table>

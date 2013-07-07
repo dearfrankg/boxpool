@@ -1,0 +1,66 @@
+<div ng-include="" src="'views/nav.html'"></div>
+
+<div ng-show="admin">
+
+  <form name="myForm">
+
+
+
+    <div class="control-group" ng-class="{error: myForm.date.$invalid}">
+      <label>Date</label>
+      <input type="text" name="date" ng-model="order.date" required="">
+      <span ng-show="myForm.date.$error.required" class="help-inline">Required</span>
+    </div>
+
+
+    <div class="control-group" ng-class="{error: myForm.user.$invalid}">
+      <label>User</label>
+      <input type="text" name="user" placeholder="User's full name" ng-model="user" required="" typeahead="u as u.fullName for u in getUsers($viewValue)">
+      <span ng-show="myForm.user.$error.required" class="help-inline">Required</span>
+      <div ng-show="!!userView.imageUrl"><img class="img-tiny" ng-src="{{userView.imageUrl}}"> {{userView.first + ' ' + userView.last}}</div>
+    </div> 
+
+
+
+    <div class="control-group" ng-class="{error: myForm.merchant.$invalid}">
+      <label>Merchant</label>
+      <input type="text" name="merchant" ng-model="order.merchant" required="">
+      <span ng-show="myForm.merchant.$error.required" class="help-inline">Required</span>
+    </div>
+
+
+
+    <div class="control-group" ng-class="{error: myForm.track.$invalid}">
+      <label>Tracking Number</label>
+      <input type="text" name="track" ng-model="order.track" required="">
+      <span ng-show="myForm.track.$error.required" class="help-inline">Required</span>
+    </div>
+
+
+    <div class="control-group" ng-class="{error: myForm.status.$invalid}">
+      <label>Status</label>
+
+      <div class="btn-group">
+          <a ng-repeat="status in statuses" type="button" class="btn" ng-model="order.status" btn-radio="status.id" tooltip-html-unsafe="{{status.name}}" ng-click="order.$update()"><i ng-class="status.class"></i></a>
+      </div>
+
+      <span ng-show="myForm.status.$error.required" class="help-inline">Required</span>
+    </div>
+
+
+
+
+
+    <label>Notes</label>
+    <textarea class="span11" name="text" ng-model="order.notes"></textarea>
+
+
+
+
+    <br>
+    <a href="#/edit-orders" class="btn"><i class="icon-list"></i> Order List</a>
+    <button ng-click="save()" ng-disabled="isClean() || myForm.$invalid" class="btn btn-primary">Save</button>
+    <button ng-click="destroy()" ng-show="order._id" class="btn btn-danger">Delete</button>
+  </form>
+
+</div>

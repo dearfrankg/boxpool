@@ -1,0 +1,57 @@
+<div ng-include="" src="'views/nav.html'"></div>
+
+<div ng-show="admin">
+
+
+  <form name="myForm">
+      
+    <div class="control-group" ng-class="{error: myForm.email.$invalid}">
+      <label>Email</label>
+      <input type="email" name="email" ng-model="user.email" required="">
+      <span ng-show="myForm.email.$error.required" class="help-inline">Required</span>
+    </div>
+
+    <div class="control-group" ng-class="{error: myForm.imageUrl.$invalid}">
+      <label>Picture</label>
+      <input type="url" name="imageUrl" ng-model="user.imageUrl">
+      <span ng-show="myForm.imageUrl.$error.required" class="help-inline">Required</span>
+      <div><img class="img-rounded img-normal" ng-src="{{user.imageUrl || genericUser}}"></div>
+    </div>
+
+
+
+    <div class="control-group" ng-class="{error: myForm.first.$invalid}">
+      <label>First</label>
+      <input type="text" name="first" ng-model="user.first" required="">
+      <span ng-show="myForm.first.$error.required" class="help-inline">Required</span>
+    </div>
+
+    <div class="control-group" ng-class="{error: myForm.last.$invalid}">
+      <label>Last</label>
+      <input type="text" name="last" ng-model="user.last" required="">
+      <span ng-show="myForm.last.$error.required" class="help-inline">Required</span>
+    </div>
+
+    <div class="control-group" ng-class="{error: myForm.phone.$invalid}">
+      <label>Phone</label>
+      <input type="text" name="phone" ng-model="user.phone" required="">
+      <span ng-show="myForm.phone.$error.required" class="help-inline">Required</span>
+    </div>
+
+
+
+    <label>Shipping Address</label>
+    <textarea name="address" ng-model="user.address"></textarea>
+
+    <label>
+      <button class="btn btn-primary" type="checkbox" name="admin" ng-model="user.admin"><i class="icon-check"></i> Admin</button>
+    </label>
+    
+
+    <br>
+    <a href="#/edit-users" class="btn"><i class="icon-list"></i> User List</a>
+    <button ng-click="save()" ng-disabled="isClean() || myForm.$invalid" class="btn btn-primary">Save</button>
+    <button ng-click="destroy()" ng-show="user._id" class="btn btn-danger">Delete</button>
+  </form>
+
+</div>

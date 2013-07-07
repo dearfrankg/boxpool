@@ -1,0 +1,37 @@
+<div ng-include="" src="'views/nav.html'"></div>
+
+<div ng-show="admin">
+
+
+  <a class="btn btn-info" href="#/edit-users/new"><i class="icon-plus-sign"></i> New User</a>
+  <br>
+  <br>
+
+  <input type="text" ng-model="search" class="search-query" placeholder="Search">
+  <br>
+  <br>
+
+  <table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="user in users | filter:search | orderBy:'last'">
+      <td><a href="#/edit-users/{{user._id.$oid}}"><i class="icon-pencil"></i></a></td>   
+      <td>
+
+        <a href="#/edit-users/{{user._id.$oid}}"><img class="img-tiny" ng-src="{{user.imageUrl}}"></a>
+        <a href="#/edit-users/{{user._id.$oid}}">{{user.first + ' ' + user.last}}</a>
+      </td>   
+      <td><a href="mailto:{{user.email}}" target="_blank">{{user.email}}</a></td>
+      <td>{{user.phone}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+<div></div></div>

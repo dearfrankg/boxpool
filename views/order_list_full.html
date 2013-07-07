@@ -1,0 +1,30 @@
+<div ng-include="" src="'views/nav.html'"></div>
+
+<input type="text" ng-model="search" class="search-query" placeholder="Search">
+<br>
+<br>
+
+<table class="table table-bordered table-striped">
+  <thead>
+  <tr>
+    <th>&nbsp;</th>
+    <th><a href="" ng-click="sortKey='track'">Tracking Number</a></th>
+    <th><a href="" ng-click="sortKey='merchant'">Merchant</a></th>
+    <th><a href="" ng-click="sortKey='-date'">Date Ordered</a></th>
+    <th><a href="" ng-click="sortKey='status'">Status</a></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="order in orders | filter:search | orderBy:sortKey">
+    <td><a href="#/edit-orders/{{order._id.$oid}}"><i class="icon-pencil"></i></a></td>   
+    <td>{{order.track}}</td>
+    <td>{{order.merchant}}</td>
+    <td>{{order.date | date:'shortDate'}}</td>
+    <td>
+          <div class="btn-group">
+              <a class="btn" tooltip-html-unsafe="{{statuses[order.status-1].name}}" disabled="disabled"><i ng-class="statuses[order.status-1].class"></i></a>
+          </div>
+    </td>
+  </tr>
+  </tbody>
+</table>

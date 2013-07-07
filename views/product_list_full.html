@@ -22,7 +22,7 @@
   </thead>
   <tbody>
   <tr ng-repeat="product in products | filter:{category:radio.category} | filter:search | orderBy:'name'">
-    <td class="span1"><img class="product-image-thumb" ng-src="{{product.imageUrl}}"></td>
+    <td class="span1"><img class="img-normal" ng-src="{{product.imageUrl}}"></td>
     <td>      
       <div class="product-title">{{product.name}}</div>
       <div>{{product.description}}</div>
