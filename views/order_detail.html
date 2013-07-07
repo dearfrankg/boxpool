@@ -41,7 +41,7 @@
       <label>Status</label>
 
       <div class="btn-group">
-          <a ng-repeat="status in statuses" type="button" class="btn" ng-model="order.status" btn-radio="status.id" tooltip-html-unsafe="{{status.name}}" ng-click="order.$update()"><i ng-class="status.class"></i></a>
+          <a ng-repeat="status in statuses" type="button" class="btn" ng-model="order.status" btn-radio="status.id" tooltip-html-unsafe="{{status.name}}"><i ng-class="status.class"></i></a>
       </div>
 
       <span ng-show="myForm.status.$error.required" class="help-inline">Required</span>
