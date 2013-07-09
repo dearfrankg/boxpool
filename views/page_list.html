@@ -2,14 +2,10 @@
 
 <div ng-show="admin">
 
-
+  <input type="text" ng-model="search" class="span4 search-query" placeholder="Search">
   <a class="btn btn-info" href="#/pages/new"><i class="icon-plus-sign"></i> New Page</a>
   <br>
   <br>
-  <input type="text" ng-model="search" class="search-query" placeholder="Search">
-  <br>
-  <br>
-
 
   <table class="table table-bordered table-striped">
     <thead>
@@ -20,7 +16,7 @@
     </thead>
     <tbody>
     <tr ng-repeat="page in pages | filter:search | orderBy:'name'">
-      <td><a href="#/pages/{{page._id.$oid}}"><i class="icon-pencil"></i></a></td>    
+      <td><a href="#/pages/{{page._id.$oid}}"><i class="icon-edit"></i></a></td>    
       <td><a href="#/pages/{{page._id.$oid}}">{{page.name}}</a></td>
     </tr>
     </tbody>

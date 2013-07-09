@@ -2,12 +2,8 @@
 
 <div ng-show="admin">
 
-
+  <input type="text" ng-model="search" class="span4 search-query" placeholder="Search">
   <a class="btn btn-info" href="#/edit-orders/new"><i class="icon-plus-sign"></i> New Order</a>
-  <br>
-  <br>
-
-  <input type="text" ng-model="search" class="search-query" placeholder="Search">
   <br>
   <br>
 
@@ -24,11 +20,11 @@
     </thead>
     <tbody>
     <tr ng-repeat="order in orders | filter:search | orderBy:sortKey">
-      <td><a href="#/edit-orders/{{order._id.$oid}}"><i class="icon-pencil"></i></a></td>   
+      <td><a href="#/edit-orders/{{order._id.$oid}}"><i class="icon-edit"></i></a></td>   
       <td>{{order.date | date:'shortDate'}}</td>
       <td><a href="#/edit-orders/{{order._id.$oid}}">{{order.track}}</a></td>
       <td>{{order.merchant}}</td>
-      <td><img class="img-tiny" ng-src="{{order.user.imageUrl}}"> {{order.user.first + ' ' + order.user.last}}</td>
+      <td><img class="img-tiny" ng-src="{{order.user.imageUrl  || genericUser}}"> {{order.user.first + ' ' + order.user.last}}</td>
       <td style="width: 250px">
             <div class="btn-group">
                 <a ng-repeat="status in statuses" type="button" class="btn" ng-model="order.status" btn-radio="status.id" tooltip-html-unsafe="{{status.name}}" ng-click="saveStatus(order)"><i ng-class="status.class"></i></a>

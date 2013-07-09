@@ -17,7 +17,7 @@
       <label>User</label>
       <input type="text" name="user" placeholder="User's full name" ng-model="user" required="" typeahead="u as u.fullName for u in getUsers($viewValue)">
       <span ng-show="myForm.user.$error.required" class="help-inline">Required</span>
-      <div ng-show="!!userView.imageUrl"><img class="img-tiny" ng-src="{{userView.imageUrl}}"> {{userView.first + ' ' + userView.last}}</div>
+      <div ng-show="!!userView.first"><img class="img-tiny" ng-src="{{userView.imageUrl || genericUser}}"> {{userView.first + ' ' + userView.last}}</div>
     </div> 
 
 

@@ -19,9 +19,11 @@
     </div>
 
 
-
-    <label>Tooltip</label>
-    <textarea name="tooltip" ng-model="category.tooltip"></textarea>
+    <div class="control-group" ng-class="{error: myForm.tooltip.$invalid}">
+      <label>Tooltip</label>
+      <input type="text" name="tooltip" ng-model="category.tooltip">
+      <span ng-show="myForm.tooltip.$error.required" class="help-inline">Required</span>
+    </div>
 
     <br>
     <a href="#/categories" class="btn"><i class="icon-list"></i> Category List</a>

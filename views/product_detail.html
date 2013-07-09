@@ -22,7 +22,7 @@
 
     <div class="control-group" ng-class="{error: myForm.name.$invalid}">
       <label>Name</label>
-      <input type="text" name="name" ng-model="product.name" required="">
+      <input class="span6" type="text" name="name" ng-model="product.name" required="">
       <span ng-show="myForm.name.$error.required" class="help-inline">Required</span>
     </div>
 
@@ -34,14 +34,14 @@
 
     <div class="control-group" ng-class="{error: myForm.imageUrl.$invalid}">
       <label>Image Url</label>
-      <input type="url" name="imageUrl" ng-model="product.imageUrl" required="">
+      <input class="span6" type="url" name="imageUrl" ng-model="product.imageUrl" required="">
       <span ng-show="myForm.imageUrl.$error.required" class="help-inline">Required</span>
       <span ng-show="myForm.imageUrl.$error.url" class="help-inline">Not a URL</span>
       <div><img class="img-rounded img-normal" ng-src="{{product.imageUrl}}"></div>
     </div>
 
     <label>Description</label>
-    <textarea name="description" ng-model="product.description"></textarea>
+    <textarea class="span11" name="description" ng-model="product.description"></textarea>
 
     <br>
     <a href="#/edit-products" class="btn"><i class="icon-list"></i> Product List</a>

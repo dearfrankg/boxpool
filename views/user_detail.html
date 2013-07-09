@@ -7,13 +7,13 @@
       
     <div class="control-group" ng-class="{error: myForm.email.$invalid}">
       <label>Email</label>
-      <input type="email" name="email" ng-model="user.email" required="">
+      <input class="span6" type="email" name="email" ng-model="user.email" required="">
       <span ng-show="myForm.email.$error.required" class="help-inline">Required</span>
     </div>
 
     <div class="control-group" ng-class="{error: myForm.imageUrl.$invalid}">
       <label>Picture</label>
-      <input type="url" name="imageUrl" ng-model="user.imageUrl">
+      <input class="span6" type="url" name="imageUrl" ng-model="user.imageUrl">
       <span ng-show="myForm.imageUrl.$error.required" class="help-inline">Required</span>
       <div><img class="img-rounded img-normal" ng-src="{{user.imageUrl || genericUser}}"></div>
     </div>
@@ -41,7 +41,7 @@
 
 
     <label>Shipping Address</label>
-    <textarea name="address" ng-model="user.address"></textarea>
+    <textarea class="span6" name="address" ng-model="user.address"></textarea>
 
     <label>
       <button class="btn btn-primary" type="checkbox" name="admin" ng-model="user.admin"><i class="icon-check"></i> Admin</button>
