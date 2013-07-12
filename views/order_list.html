@@ -12,9 +12,11 @@
     <tr>
       <th>&nbsp;</th>
       <th><a href="" ng-click="sortKey='-date'">Date Ordered</a></th>
-      <th><a href="" ng-click="sortKey='track'">Tracking Number</a></th>
+      <th><a href="" ng-click="sortKey='order'">Order Number</a></th>
       <th><a href="" ng-click="sortKey='merchant'">Merchant</a></th>
-      <th><a href="" ng-click="sortKey='user'">User</a></th>
+      <th><a href="" ng-click="sortKey='track'">Tracking Number</a></th>
+      <th><a href="" ng-click="sortKey='weight'">Weight</a></th>
+      <th><a href="" ng-click="sortKey='paid'">Paid</a></th>
       <th><a href="" ng-click="sortKey='status'">Status</a></th>
     </tr>
     </thead>
@@ -22,9 +24,11 @@
     <tr ng-repeat="order in orders | filter:search | orderBy:sortKey">
       <td><a href="#/edit-orders/{{order._id.$oid}}"><i class="icon-edit"></i></a></td>   
       <td>{{order.date | date:'shortDate'}}</td>
-      <td><a href="#/edit-orders/{{order._id.$oid}}">{{order.track}}</a></td>
+      <td><a href="#/edit-orders/{{order._id.$oid}}"><nobr>{{order.orderNumber}}</nobr></a></td>
       <td>{{order.merchant}}</td>
-      <td><img class="img-tiny" ng-src="{{order.user.imageUrl  || genericUser}}"> {{order.user.first + ' ' + order.user.last}}</td>
+      <td>{{order.track}}</td>
+      <td>{{order.weight}}</td>
+      <td><i class="{{order.paid && 'icon-check' || 'icon-check-empty'}}"></i></td>
       <td style="width: 250px">
             <div class="btn-group">
                 <a ng-repeat="status in statuses" type="button" class="btn" ng-model="order.status" btn-radio="status.id" tooltip-html-unsafe="{{status.name}}" ng-click="saveStatus(order)"><i ng-class="status.class"></i></a>

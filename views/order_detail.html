@@ -2,9 +2,10 @@
 
 <div ng-show="admin">
 
+
+  <div ng-show="order._id" class="pull-right"><a href="">Activity Log</a></div>
+
   <form name="myForm">
-
-
 
     <div class="control-group" ng-class="{error: myForm.date.$invalid}">
       <label>Date</label>
@@ -13,41 +14,65 @@
     </div>
 
 
-    <div class="control-group" ng-class="{error: myForm.user.$invalid}">
+    <div class="control-group inline" ng-class="{error: myForm.foo.$invalid}">
       <label>User</label>
-      <input type="text" name="user" placeholder="User's full name" ng-model="user" required="" typeahead="u as u.fullName for u in getUsers($viewValue)">
-      <span ng-show="myForm.user.$error.required" class="help-inline">Required</span>
-      <div ng-show="!!userView.first"><img class="img-tiny" ng-src="{{userView.imageUrl || genericUser}}"> {{userView.first + ' ' + userView.last}}</div>
+      <input type="hidden" name="foo" ng-model="userView._id.$oid" required="">
+      <input type="text" name="name" placeholder="User's full name" ng-model="user" required="" typeahead="u as u.fullName for u in getUsers($viewValue)">
+      <span ng-show="myForm.foo.required" class="help-inline">Required</span>
     </div> 
 
+    <div class="inline" ng-show="!!userView.first">
+      <img class="img-tiny" ng-src="{{userView.imageUrl || genericUser}}"> {{userView.first + ' ' + userView.last}}
+    </div>
 
 
-    <div class="control-group" ng-class="{error: myForm.merchant.$invalid}">
+    <div></div>
+
+
+    <div class="control-group inline" ng-class="{error: myForm.orderNumber.$invalid}">
+      <label>Order Number</label>
+      <input type="text" name="orderNumber" ng-model="order.orderNumber" required="">
+      <span ng-show="myForm.orderNumber.$error.required" class="help-inline">Required</span>
+    </div>
+
+    <div class="control-group inline" ng-class="{error: myForm.merchant.$invalid}">
       <label>Merchant</label>
       <input type="text" name="merchant" ng-model="order.merchant" required="">
       <span ng-show="myForm.merchant.$error.required" class="help-inline">Required</span>
     </div>
 
 
+    <div></div>
 
-    <div class="control-group" ng-class="{error: myForm.track.$invalid}">
+
+    <div class="control-group inline" ng-class="{error: myForm.track.$invalid}">
       <label>Tracking Number</label>
       <input type="text" name="track" ng-model="order.track" required="">
       <span ng-show="myForm.track.$error.required" class="help-inline">Required</span>
     </div>
 
+    <div class="control-group inline" ng-class="{error: myForm.weight.$invalid}">
+      <label>Package Weight</label>
+      <input type="number" name="weight" ng-model="order.weight">
+      <span ng-show="myForm.weight.$error.required" class="help-inline">Required</span>
+    </div>
+
+
 
     <div class="control-group" ng-class="{error: myForm.status.$invalid}">
       <label>Status</label>
-
       <div class="btn-group">
           <a ng-repeat="status in statuses" type="button" class="btn" ng-model="order.status" btn-radio="status.id" tooltip-html-unsafe="{{status.name}}"><i ng-class="status.class"></i></a>
       </div>
-
       <span ng-show="myForm.status.$error.required" class="help-inline">Required</span>
     </div>
 
 
+
+    <div class="control-group inline">
+      <label>Paid</label>
+      <a name="paid" class="btn {{ order.paid && 'btn-success'||''}}" ng-model="order.paid" ng-click="order.paid = !order.paid"><i class="{{order.paid && 'icon-check' || 'icon-check-empty' }}"></i> Paid</a>
+    </div>
 
 
 
@@ -60,7 +85,14 @@
     <br>
     <a href="#/edit-orders" class="btn"><i class="icon-list"></i> Order List</a>
     <button ng-click="save()" ng-disabled="isClean() || myForm.$invalid" class="btn btn-primary">Save</button>
-    <button ng-click="destroy()" ng-show="order._id" class="btn btn-danger">Delete</button>
+
+    <a ng-click="destroy()" ng-show="order._id" class="btn btn-danger">Delete</a>
+
+
+    <button style="visibility: hidden" class="btn btn-primary">Save</button>
+
+
+
   </form>
 
 </div>

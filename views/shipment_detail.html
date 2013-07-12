@@ -1,0 +1,44 @@
+<div ng-include="" src="'views/nav.html'"></div>
+
+<div ng-show="admin">
+
+
+
+
+  <form name="myForm">
+
+
+    <div class="control-group" ng-class="{error: myForm.date.$invalid}">
+      <label>Date</label>
+      <input type="text" name="date" ng-model="shipment.date" required="">
+      <span ng-show="myForm.date.$error.required" class="help-inline">Required</span>
+    </div>
+
+
+    <div class="control-group" ng-class="{error: myForm.track.$invalid}">
+      <label>Tracking Number</label>
+      <input type="text" name="track" ng-model="shipment.track" required="">
+      <span ng-show="myForm.track.$error.required" class="help-inline">Required</span>
+    </div>
+
+
+    <div class="control-group" ng-class="{error: myForm.weight.$invalid}">
+      <label>Package Weight</label>
+      <input type="number" name="weight" ng-model="shipment.weight" required="">
+      <span ng-show="myForm.weight.$error.required" class="help-inline">Required</span>
+    </div>
+
+
+    <label>Notes</label>
+    <textarea class="span11" name="text" ng-model="shipment.text"></textarea>
+
+
+
+
+    <br>
+    <a href="#/shipments" class="btn"><i class="icon-list"></i> Shipment List</a>
+    <button ng-click="save()" ng-disabled="isClean() || myForm.$invalid" class="btn btn-primary">Save</button>
+    <button ng-click="destroy()" ng-show="shipment._id" class="btn btn-danger">Delete</button>
+  </form>
+
+</div>
