@@ -5,7 +5,7 @@
 
   <div ng-show="order._id" class="pull-right"><a href="">Activity Log</a></div>
 
-  <form name="myForm">
+  <form name="myForm" class="order-detail">
 
     <div class="control-group" ng-class="{error: myForm.date.$invalid}">
       <label>Date</label>
@@ -29,21 +29,27 @@
     <div></div>
 
 
-    <div class="control-group inline" ng-class="{error: myForm.orderNumber.$invalid}">
-      <label>Order Number</label>
-      <input type="text" name="orderNumber" ng-model="order.orderNumber" required="">
-      <span ng-show="myForm.orderNumber.$error.required" class="help-inline">Required</span>
-    </div>
-
     <div class="control-group inline" ng-class="{error: myForm.merchant.$invalid}">
       <label>Merchant</label>
       <input type="text" name="merchant" ng-model="order.merchant" required="">
       <span ng-show="myForm.merchant.$error.required" class="help-inline">Required</span>
     </div>
 
+    <div class="control-group inline" ng-class="{error: myForm.weight.$invalid}">
+      <label>Package Weight</label>
+      <input type="text" name="weight" ng-model="order.weight">
+      <span ng-show="myForm.weight.$error.required" class="help-inline">Required</span>
+    </div>
+
 
     <div></div>
 
+
+    <div class="control-group inline" ng-class="{error: myForm.orderNumber.$invalid}">
+      <label>Order Number</label>
+      <input type="text" name="orderNumber" ng-model="order.orderNumber" required="">
+      <span ng-show="myForm.orderNumber.$error.required" class="help-inline">Required</span>
+    </div>
 
     <div class="control-group inline" ng-class="{error: myForm.track.$invalid}">
       <label>Tracking Number</label>
@@ -51,11 +57,25 @@
       <span ng-show="myForm.track.$error.required" class="help-inline">Required</span>
     </div>
 
-    <div class="control-group inline" ng-class="{error: myForm.weight.$invalid}">
-      <label>Package Weight</label>
-      <input type="number" name="weight" ng-model="order.weight">
-      <span ng-show="myForm.weight.$error.required" class="help-inline">Required</span>
+
+    <div></div>
+
+    <div class="control-group inline" ng-class="{error: myForm.amountDue.$invalid}">
+      <label>Amount Due</label>
+      <input type="text" name="weight" ng-model="order.amountDue">
+      <span ng-show="myForm.amountDue.$error.required" class="help-inline">Required</span>
     </div>
+
+
+    <div class="control-group inline">
+      <label>Paid</label>
+      <a name="paid" class="btn {{ order.paid && 'btn-success'||''}}" ng-model="order.paid" ng-click="order.paid = !order.paid"><i class="{{order.paid && 'icon-check' || 'icon-check-empty' }}"></i> Paid</a>
+    </div>
+
+
+
+
+
 
 
 
@@ -67,12 +87,6 @@
       <span ng-show="myForm.status.$error.required" class="help-inline">Required</span>
     </div>
 
-
-
-    <div class="control-group inline">
-      <label>Paid</label>
-      <a name="paid" class="btn {{ order.paid && 'btn-success'||''}}" ng-model="order.paid" ng-click="order.paid = !order.paid"><i class="{{order.paid && 'icon-check' || 'icon-check-empty' }}"></i> Paid</a>
-    </div>
 
 
 

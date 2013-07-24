@@ -12,10 +12,11 @@
     <tr>
       <th>&nbsp;</th>
       <th><a href="" ng-click="sortKey='-date'">Date Ordered</a></th>
-      <th><a href="" ng-click="sortKey='order'">Order Number</a></th>
+      <th>
+        <a href="" ng-click="sortKey='order'">Order Number</a> /<br>
+        <a href="" ng-click="sortKey='track'">Tracking Number</a> </th>
       <th><a href="" ng-click="sortKey='merchant'">Merchant</a></th>
-      <th><a href="" ng-click="sortKey='track'">Tracking Number</a></th>
-      <th><a href="" ng-click="sortKey='weight'">Weight</a></th>
+      <th><a href="" ng-click="sortKey='weight'">Weight</a> /<br> Amount Due</th>
       <th><a href="" ng-click="sortKey='paid'">Paid</a></th>
       <th><a href="" ng-click="sortKey='status'">Status</a></th>
     </tr>
@@ -24,10 +25,15 @@
     <tr ng-repeat="order in orders | filter:search | orderBy:sortKey">
       <td><a href="#/edit-orders/{{order._id.$oid}}"><i class="icon-edit"></i></a></td>   
       <td>{{order.date | date:'shortDate'}}</td>
-      <td><a href="#/edit-orders/{{order._id.$oid}}"><nobr>{{order.orderNumber}}</nobr></a></td>
-      <td>{{order.merchant}}</td>
-      <td>{{order.track}}</td>
-      <td>{{order.weight}}</td>
+      <td>
+        <a href="#/edit-orders/{{order._id.$oid}}"><nobr>{{order.orderNumber}}</nobr></a><br>
+        {{order.track}}
+      </td><td>{{order.merchant}}</td>
+      <td>
+        <span ng-show="order.weight">{{order.weight}} lbs </span><br>
+        {{order.amountDue | currency:"￥" }} 
+
+      </td>
       <td><i class="{{order.paid && 'icon-check' || 'icon-check-empty'}}"></i></td>
       <td style="width: 250px">
             <div class="btn-group">

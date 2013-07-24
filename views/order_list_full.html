@@ -11,6 +11,7 @@
     <th><a href="" ng-click="sortKey='orderNumber'">Order Number</a></th>
     <th><a href="" ng-click="sortKey='track'">Tracking Number</a></th>
     <th><a href="" ng-click="sortKey='status'">Weight</a></th>
+    <th><a href="" ng-click="sortKey='status'">Amount Due</a></th>
     <th><a href="" ng-click="sortKey='status'">Paid</a></th>
     <th><a href="" ng-click="sortKey='status'">Status</a></th>
   </tr>
@@ -21,7 +22,8 @@
     <td>{{order.orderNumber}}</td>
     <td>{{order.track}}</td>
 
-    <td>{{order.weight}}</td>
+    <td> <span ng-show="order.weight">{{order.weight}} lbs</span>  </td>
+    <td>{{order.amountDue | currency:"￥"}}</td>
     <td><i class="{{order.paid && 'icon-check' || 'icon-check-empty'}}"></i></td>
 
     <td>
