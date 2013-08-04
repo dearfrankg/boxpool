@@ -3,7 +3,7 @@
 <div ng-show="admin">
 
   <div>
-  <input type="text" ng-model="search.date" class="span4 search-query" placeholder="Search">
+  <input type="text" ng-model="search" class="span4 search-query" placeholder="Search">
   <a class="btn btn-info" href="#/edit-orders/new"><i class="icon-plus-sign"></i> New Order</a>
 
   <label for="china">
@@ -31,7 +31,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="order in orders | filter:search | filter:myFilter() | orderBy:sortKey">
+    <tr ng-repeat="order in orders | filter:myFilter() | filter:search | orderBy:sortKey">
       <td><a href="#/edit-orders/{{order._id.$oid}}"><i class="icon-edit"></i></a></td>   
       <td>{{order.date | date:'shortDate'}}</td>
       <td>
